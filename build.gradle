@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+}
+
+group 'kr.macadamia.geo'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven {
+        url "http://download.osgeo.org/webdav/geotools/"
+    }
+    maven {
+        url "https://repo.osgeo.org/repository/release"
+    }
+    maven {
+        url "https://repo.osgeo.org/repository/snapshot"
+    }
+    mavenCentral()
+}
+
+dependencies {
+
+    compile 'org.apache.commons:commons-lang3:3.6'
+    compile 'commons-io:commons-io:2.4'
+    compile 'com.google.guava:guava:11.0.2'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.10.4'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.10.4'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.10.4'
+
+    compile 'org.geotools:gt-shapefile:23.1'
+    compile 'org.geotools:gt-swing:23.1'
+    compile 'org.geotools:gt-geojson:23.1'
+    compile 'org.geotools:gt-epsg-hsql:22-RC'
+    compile 'org.geotools:gt-epsg-wkt:23.1'
+
+    compile 'org.osgeo:proj4j:0.1.0'
+//    compile 'org.geotools:gt2-epsg-hsql:2.4.4'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+}
